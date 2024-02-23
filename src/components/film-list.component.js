@@ -42,6 +42,11 @@ export default class FilmList extends Component {
         console.log(response.data);
       })
       .catch(e => {
+        console.log(e.message);
+        console.log(e.data);
+        console.log(e.response);
+        console.log(e.statusText);
+        console.log(e.responseType);
         console.log(e);
       });
   }
