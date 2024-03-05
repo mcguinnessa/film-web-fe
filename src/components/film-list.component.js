@@ -129,65 +129,17 @@ export default class FilmList extends Component {
         <div className="col-md-6">
           <h4>Film List</h4>
 
-          <ul className="list-group">
+          <table className="list-group">
             {films &&
               films.map((film, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveTutorial(film, index)}
-                  key={index}
-                >
-                  {film.title}
-                </li>
+                <tr>
+                <td > <a href={'http://www.imdb.com/title/' + film.imdbid}  >  {film.title} ({film.year})</a> </td>
+                <td> {film.runtime} </td>
+                <td> {film.imdb_rating} </td>
+                <td> {film.media_type} </td>
+                </tr>
               ))}
-          </ul>
-
-          <button
-            className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllFilms}
-          >
-            Remove All
-          </button>
-        </div>
-        <div className="col-md-6">
-          {currentTutorial ? (
-            <div>
-              <h4>Tutorial</h4>
-              <div>
-                <label>
-                  <strong>Title:</strong>
-                </label>{" "}
-                {currentTutorial.title}
-              </div>
-              <div>
-                <label>
-                  <strong>Description:</strong>
-                </label>{" "}
-                {currentTutorial.description}
-              </div>
-              <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentTutorial.published ? "Published" : "Pending"}
-              </div>
-
-              <Link
-                to={"/tutorials/" + currentTutorial.id}
-                className="badge badge-warning"
-              >
-                Edit
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Tutorial...</p>
-            </div>
-          )}
+          </table>
         </div>
       </div>
     );

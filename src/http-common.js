@@ -11,6 +11,7 @@ export default axios.create({
 //  baseURL: "http://192.168.0.118:31356/api",
 //  baseURL: base_url,
   baseURL: "http://film-web-be-service.default.svc.cluster.local:8080/api",
+//  baseURL: "http://192.168.0.160/api",
   headers: {
     "Content-type": "application/json"
   }
