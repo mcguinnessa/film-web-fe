@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import FilmDataService from "../services/film.service";
 import { Link } from "react-router-dom";
 
+import '../style.css';
+
 export default class FilmList extends Component {
   constructor(props) {
     super(props);
@@ -126,19 +128,31 @@ export default class FilmList extends Component {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
-          <h4>Film List</h4>
-
-          <table className="list-group">
+        <div className="film-table">
+          <table id="filmlist" className="display">
+            <thead>
+               <tr>
+                  <th>Title</th>
+                  <th>Runtime</th>
+                  <th>Classification</th>
+                  <th>IMDB Rating</th>
+                  <th>Media Type</th>
+                  <th>Watched</th>
+               </tr>
+            </thead>
+            <tbody>
             {films &&
               films.map((film, index) => (
                 <tr>
                 <td > <a href={'http://www.imdb.com/title/' + film.imdbid}  >  {film.title} ({film.year})</a> </td>
                 <td> {film.runtime} </td>
+                <td> {film.classification} </td>
                 <td> {film.imdb_rating} </td>
                 <td> {film.media_type} </td>
+                <td> {film.watched} </td>
                 </tr>
               ))}
+            </tbody>
           </table>
         </div>
       </div>
