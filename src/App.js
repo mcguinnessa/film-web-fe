@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 import FilmList from "./components/film-list.component";
+import UnwatchedList from "./components/unwatched.component";
 
 //function App() {
 class App extends React.Component {
@@ -34,6 +35,16 @@ class App extends React.Component {
                          Unwatched
                       </Link>
                    </li>
+                   <li className="nav-item">
+                      <Link to={"/streaming"} className="nav-link">
+                         Streaming 
+                      </Link>
+                   </li>
+                   <li className="nav-item">
+                      <Link to={"/tv"} className="nav-link">
+                         TV Films
+                      </Link>
+                   </li>
                 </div>
              </nav>
 
@@ -41,7 +52,9 @@ class App extends React.Component {
              <Routes>
                 <Route path="/" element={<FilmList/>} />
                 <Route path="/films" element={<FilmList/>} />
-                <Route path="/unwatched" element={<FilmList/>} />
+                <Route path="/unwatched" element={<UnwatchedList/>} />  
+                <Route path="/streaming" element={<FilmList/>} />
+                <Route path="/tv" element={<FilmList/>} />
               </Routes>
            </div>
 {/*
