@@ -105,6 +105,7 @@ export default class FilmList extends Component {
   render() {
     console.log("render()");
     const { searchTitle, films, currentTutorial, currentIndex } = this.state;
+    var film_count = 1;
 
     return (
       <div className="list row">
@@ -132,6 +133,7 @@ export default class FilmList extends Component {
           <table id="filmlist" className="display">
             <thead>
                <tr>
+                  <th>No.</th>
                   <th>Title</th>
                   <th>Runtime</th>
                   <th>Classification</th>
@@ -144,6 +146,7 @@ export default class FilmList extends Component {
             {films &&
               films.map((film, index) => (
                 <tr>
+                <td> {film_count++} </td>
                 <td > <a href={'http://www.imdb.com/title/' + film.imdbid}  >  {film.title} ({film.year})</a> </td>
                 <td> {film.runtime} </td>
                 <td> {film.classification} </td>
