@@ -145,10 +145,10 @@ export default class FilmList extends Component {
             <tbody>
             {films &&
               films.map((film, index) => (
-                <tr>
+                <tr key={index.uniqueId}>
                 <td> {film_count++} </td>
-                <td > <a href={'http://www.imdb.com/title/' + film.imdbid}  >  {film.title} ({film.year})</a> </td>
-                <td> {film.runtime} </td>
+                <td> <a href={'http://www.imdb.com/title/' + film.imdbid}  >  {film.title} ({film.year})</a> </td>
+                <td> {film.runtime / 60} </td>
                 <td> {film.classification} </td>
                 <td> {film.imdb_rating} </td>
                 <td> {film.media_type} </td>

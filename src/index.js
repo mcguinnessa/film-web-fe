@@ -2,9 +2,12 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
+//import dotenv from "dotenv";
 
 import App from "./App";
 
+//const dotenv = require("dotenv")
+//dotenv.config()
 
 axios.interceptors.request.use(request => {
    console.log(request);
@@ -25,6 +28,7 @@ axios.interceptors.response.use(response => {
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+//const dotenv = require("dotenv")
 
 
 

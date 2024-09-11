@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 //This is for routing
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { Config } from './config';
+
 //
 //import React from "react";
 import ReactDOM from "react-dom";
@@ -14,9 +16,15 @@ import './App.css';
 import FilmList from "./components/film-list.component";
 import UnwatchedList from "./components/unwatched.component";
 
+//const DB_BACKEND_URL = process.env.REACT_APP_DB_BACKEND_URL;
+const DB_BACKEND_URL = Config.general.db_base_url
+
 //function App() {
 class App extends React.Component {
    render() {
+
+      console.log("DB_BACKEND_URL:");
+      console.log(DB_BACKEND_URL);
 
       return (
           <div>
@@ -26,22 +34,22 @@ class App extends React.Component {
                 </a>
                 <div className="navbar-nav mr-auto">
                    <li className="nav-item">
-                      <Link to={"/films"} className="nav-link">
+                      <Link to={"/films/all"} className="nav-link">
                          All Films
                       </Link>
                    </li>
                    <li className="nav-item">
-                      <Link to={"/unwatched"} className="nav-link">
+                      <Link to={"/films/unwatched"} className="nav-link">
                          Unwatched
                       </Link>
                    </li>
                    <li className="nav-item">
-                      <Link to={"/streaming"} className="nav-link">
+                      <Link to={"/films/streaming"} className="nav-link">
                          Streaming 
                       </Link>
                    </li>
                    <li className="nav-item">
-                      <Link to={"/tv"} className="nav-link">
+                      <Link to={"/films/tv"} className="nav-link">
                          TV Films
                       </Link>
                    </li>
@@ -51,10 +59,10 @@ class App extends React.Component {
            <div className="container mt-3">
              <Routes>
                 <Route path="/" element={<FilmList/>} />
-                <Route path="/films" element={<FilmList/>} />
-                <Route path="/unwatched" element={<UnwatchedList/>} />  
-                <Route path="/streaming" element={<FilmList/>} />
-                <Route path="/tv" element={<FilmList/>} />
+                <Route path="/films/all" element={<FilmList/>} />
+                <Route path="/films/unwatched" element={<UnwatchedList/>} />  
+                <Route path="/films/streaming" element={<FilmList/>} />
+                <Route path="/films/tv" element={<FilmList/>} />
               </Routes>
            </div>
 {/*

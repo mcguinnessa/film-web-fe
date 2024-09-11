@@ -1,10 +1,14 @@
 import http from "../http-common";
 
-class FilmDataService {
+//class FilmDataService {
+const filmDataService = {
   getAll() {
     console.log("Calling getAll()");
+    console.log("DB_BACKEND_URL:");
+    //console.log(process.env.DB_BACKEND_URL);
+
     return http.get("/films");
-  }
+  },
 
   getUnwatched() {
     console.log("Calling getUnwatched()");
@@ -13,4 +17,5 @@ class FilmDataService {
 
 }
 
-export default new FilmDataService();
+//export default new FilmDataService();
+export default filmDataService;
