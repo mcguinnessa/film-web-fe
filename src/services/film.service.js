@@ -7,7 +7,8 @@ const filmDataService = {
     console.log("DB_BACKEND_URL:");
     //console.log(process.env.DB_BACKEND_URL);
 
-    return http.get("/films?sort=imdb_rating&asc=false");
+    //return http.get("/films?sort=imdb_rating&asc=false");
+    return http.get("/films");
   },
 
   getUnwatched() {
