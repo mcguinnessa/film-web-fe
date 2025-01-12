@@ -23,8 +23,10 @@ const DB_BACKEND_URL = Config.general.db_base_url
 class App extends React.Component {
    render() {
 
-      console.log("DB_BACKEND_URL:");
-      console.log(DB_BACKEND_URL);
+//      process.stdout.write("Starting Film FE")
+
+      //console.log("DB_BACKEND_URL:");
+      //console.log(DB_BACKEND_URL);
 
       return (
           <div>
