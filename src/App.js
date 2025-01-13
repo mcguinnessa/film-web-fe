@@ -18,15 +18,14 @@ import UnwatchedList from "./components/unwatched.component";
 
 //const DB_BACKEND_URL = process.env.REACT_APP_DB_BACKEND_URL;
 const DB_BACKEND_URL = Config.general.db_base_url
+//const DB_BACKEND_PORT = Config.general.db_base_port
 
 //function App() {
 class App extends React.Component {
    render() {
 
-//      process.stdout.write("Starting Film FE")
-
-      //console.log("DB_BACKEND_URL:");
-      //console.log(DB_BACKEND_URL);
+      console.log("DB_BACKEND_URL:");
+      console.log(DB_BACKEND_URL);
 
       return (
           <div>

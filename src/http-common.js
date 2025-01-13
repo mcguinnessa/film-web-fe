@@ -7,8 +7,8 @@ import { Config } from './config';
 //const base_url = process.env.REST_URL_PORT
 //const base_url = process.env.DB_BACKEND_URL
 //axios.defaults.baseURL = process.env.DB_BACKEND_URL
-//axios.defaults.baseURL = "http://192.168.0.160/api"
 axios.defaults.baseURL = Config.general.db_base_url;
+//axios.defaults.baseURL = "http://192.168.0.160/api"
 
 export default axios.create({
 
