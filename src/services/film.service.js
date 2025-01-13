@@ -4,10 +4,15 @@ import http from "../http-common";
 const filmDataService = {
   getAll() {
     console.log("Calling getAll()");
-    console.log("DB_BACKEND_URL:");
+    //console.log("DB_BACKEND_URL:");
     //console.log(process.env.DB_BACKEND_URL);
 
     return http.get("/films&sort=imdb_rating&asc=false");
+  },
+
+  getOwned() {
+    console.log("Calling getOwned()");
+    return http.get("/owned");
   },
 
   getUnwatched() {

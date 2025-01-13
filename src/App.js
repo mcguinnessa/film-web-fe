@@ -36,13 +36,18 @@ class App extends React.Component {
                 </a>
                 <div className="navbar-nav mr-auto">
                    <li className="nav-item">
-                      <Link to={"/films/all"} className="nav-link">
-                         All Films
+                      <Link to={"/films/owned"} className="nav-link">
+                         Owned 
                       </Link>
                    </li>
                    <li className="nav-item">
                       <Link to={"/films/unwatched"} className="nav-link">
                          Unwatched
+                      </Link>
+                   </li>
+                   <li className="nav-item">
+                      <Link to={"/films/all"} className="nav-link">
+                         All Films
                       </Link>
                    </li>
                    <li className="nav-item">
@@ -63,6 +68,7 @@ class App extends React.Component {
                 <Route path="/" element={<FilmList/>} />
                 <Route path="/films/all" element={<FilmList/>} />
                 <Route path="/films/unwatched" element={<UnwatchedList/>} />  
+                <Route path="/films/owned" element={<FilmList/>} />  
                 <Route path="/films/streaming" element={<FilmList/>} />
                 <Route path="/films/tv" element={<FilmList/>} />
               </Routes>
