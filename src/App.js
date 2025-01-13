@@ -15,6 +15,7 @@ import './App.css';
 
 import FilmList from "./components/film-list.component";
 import UnwatchedList from "./components/unwatched.component";
+import OwnedList from "./components/owned.component";
 
 //const DB_BACKEND_URL = process.env.REACT_APP_DB_BACKEND_URL;
 const DB_BACKEND_URL = Config.general.db_base_url
@@ -67,7 +68,7 @@ class App extends React.Component {
                 <Route path="/" element={<FilmList/>} />
                 <Route path="/films/all" element={<FilmList/>} />
                 <Route path="/films/unwatched" element={<UnwatchedList/>} />  
-                <Route path="/films/owned" element={<FilmList/>} />  
+                <Route path="/films/owned" element={<OwnedList/>} />  
                 <Route path="/films/streaming" element={<FilmList/>} />
                 <Route path="/films/tv" element={<FilmList/>} />
               </Routes>
