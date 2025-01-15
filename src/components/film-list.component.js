@@ -7,6 +7,7 @@ import '../style.css';
 export default class FilmList extends Component {
   constructor(props) {
     super(props);
+    console.log("Calling FilmList Constructor()");
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.retrieveFilms = this.retrieveFilms.bind(this);
     this.refreshList = this.refreshList.bind(this);
